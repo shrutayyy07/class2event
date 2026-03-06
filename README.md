@@ -8,6 +8,11 @@ A full-stack web application that helps college clubs organize and manage events
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
+## Preview
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c76b79de-a015-4ca2-a153-184cc2612ee9" />
+
+---
 
 ##  Key Features
 
@@ -84,3 +89,110 @@ git clone https://github.com/shrutayyy07/class2event.git
 cd class2event
 npm install
 npm run dev
+
+```
+## Open in browser: http://localhost:5173
+
+---
+
+---
+
+## 📂 Project Structure
+
+```
+class2event/
+│
+├── backend/
+│   ├── prisma/
+│   │   └── schema.prisma
+│   ├── src/
+│   ├── .env
+│   ├── package.json
+│   └── package-lock.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── context/
+│   │   │   └── AuthContext.jsx
+│   │   ├── lib/
+│   │   │   └── api.js
+│   │   ├── pages/
+│   │   │   ├── CreateEvent.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── EventDetails.jsx
+│   │   │   ├── Login.jsx
+│   │   │   └── Signup.jsx
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   │
+│   ├── index.html
+│   ├── tailwind.config.js
+│   ├── postcss.config.js
+│   ├── vite.config.js
+│   └── package.json
+│
+└── README.md
+```
+
+---
+
+## 🧠 How It Works
+
+1. Users create an account or log in through the authentication system.
+2. Authenticated users can create and manage events.
+3. Each event stores details like venue, date, duration, and description.
+4. Teams and members can be added to events dynamically.
+5. The dashboard displays upcoming and past events for easy tracking.
+
+---
+
+## 🔮 Future Enhancements
+
+- Email notifications for events
+- Advanced analytics dashboard
+- Event reminders
+- Export event data
+- Role-based admin controls
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a new branch
+
+```
+git checkout -b feature-name
+```
+
+3. Commit your changes
+
+```
+git commit -m "Add new feature"
+```
+
+4. Push to your branch
+
+```
+git push origin feature-name
+```
+
+5. Open a Pull Request
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 👩‍💻 Author
+
+**Shruti**
+
+GitHub:  
+https://github.com/shrutayyy07
