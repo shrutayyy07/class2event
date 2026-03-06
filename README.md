@@ -10,7 +10,8 @@ A full-stack web application that helps college clubs organize and manage events
 ---
 ## Preview
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c76b79de-a015-4ca2-a153-184cc2612ee9" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/520f2fd5-d7b8-4e35-b866-d8dc43519ada" />
+
 
 ---
 
