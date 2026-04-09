@@ -345,12 +345,11 @@ git commit -m "Add new feature"
 ```
 git push origin feature-name
 ```
-
 5. Open a Pull Request
 
 ---
 ## authors
-SMT Verification
+SMT Verification & 
 Teacher and Club dashboard by Sia Kapila <kapilaasiaa@gmail.com>
 
 ---
