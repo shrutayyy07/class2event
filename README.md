@@ -349,6 +349,11 @@ git push origin feature-name
 5. Open a Pull Request
 
 ---
+## Commit message here
+
+Teacher and Club dashboard by Sia Kapila <kapilaasiaa@gmail.com>
+
+---
 
 ## License
 
