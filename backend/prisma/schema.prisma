@@ -1,0 +1,104 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Club {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  events    Event[]
+
+  @@map("clubs")
+}
+
+model Student {
+  id             String   @id @default(cuid())
+  name           String
+  email          String   @unique
+  password       String
+  registrationNo String   @unique
+  className      String
+  year           Int
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  organizedEvents EventOrganizer[]
+  registrations   RegistrationMember[]
+
+  @@map("students")
+}
+
+model Teacher {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("teachers")
+}
+
+model Event {
+  id          String       @id @default(cuid())
+  name        String
+  venue       String
+  date        DateTime
+  duration    Int          // duration in minutes
+  description String?
+  clubId      String
+  club        Club         @relation(fields: [clubId], references: [id], onDelete: Cascade)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  
+  organizers    EventOrganizer[]
+  registrations EventRegistration[]
+
+  @@map("events")
+}
+
+model EventOrganizer {
+  id        String   @id @default(cuid())
+  eventId   String
+  studentId String
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([eventId, studentId])
+  @@map("event_organizers")
+}
+
+model EventRegistration {
+  id        String   @id @default(cuid())
+  eventId   String
+  teamName  String?  
+  status    String   @default("PENDING") // PENDING, VERIFIED, REJECTED
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  members   RegistrationMember[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("event_registrations")
+}
+
+model RegistrationMember {
+  id             String            @id @default(cuid())
+  registrationId String
+  studentId      String
+  registration   EventRegistration @relation(fields: [registrationId], references: [id], onDelete: Cascade)
+  student        Student           @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  createdAt      DateTime          @default(now())
+
+  @@unique([registrationId, studentId])
+  @@map("registration_members")
+}
